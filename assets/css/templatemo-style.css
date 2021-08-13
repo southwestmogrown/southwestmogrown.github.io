@@ -297,6 +297,7 @@ html {
 .section-heading {
     text-align: center;
     padding: 80px 45px;
+    margin-top: 10rem;
 }
 
 .section-heading h2 {
@@ -319,6 +320,10 @@ html {
     letter-spacing: 0.5px;
 }
 
+.about-me {
+    display: flex;
+    justify-content: center;
+}
 
 /* Buttons */
 
@@ -809,3 +814,38 @@ section.contact-me {
         margin-bottom: 20px;
     }
 }
+
+.icon.my-services {
+    transform: rotate(-45deg);
+    border-radius: 3px;
+    border: solid 2px #fff;
+    display: inline-block;
+    font-size: 1.35em;
+    height: calc(3em + 20px);
+    line-height: 3em;
+    text-align: center;
+    width: calc(3em + 20px);
+    margin-left: 3em;
+    margin-top: 3em;
+}
+
+.dev-i {
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    font-size: 65px;
+    margin-top: 8px;
+    /* margin-left: 10px; */
+}
+
+
+ul.icons.my-services {
+    padding: 1em 0;
+}
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
