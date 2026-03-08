@@ -155,43 +155,48 @@
     });
   }
 
+  var FALLBACK_LANGS = {
+    'beginner-synth': 'C++',
+    'guitar-hub': 'JavaScript',
+    code_genie: 'Python',
+    kanboard: 'TypeScript',
+    quizquest: 'TypeScript',
+    'chkn-tndr': 'TypeScript'
+  };
+
+  function buildFallback() {
+    return FEATURED_REPOS.map(function (name) {
+      return {
+        name: name,
+        html_url: 'https://github.com/' + USERNAME + '/' + name,
+        description: REPO_DESCRIPTIONS[name] || '',
+        language: FALLBACK_LANGS[name] || ''
+      };
+    });
+  }
+
   function loadProjects() {
-    var grid = document.getElementById('projects-grid');
-
-    fetch('https://api.github.com/users/' + USERNAME + '/repos?per_page=100&sort=updated')
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (repos) {
-        var featured = [];
-        FEATURED_REPOS.forEach(function (name) {
-          var match = repos.find(function (r) {
-            return r.name === name;
-          });
-          if (match) featured.push(match);
+    var promises = FEATURED_REPOS.map(function (name) {
+      return fetch('https://api.github.com/repos/' + USERNAME + '/' + name)
+        .then(function (res) {
+          return res.ok ? res.json() : null;
+        })
+        .catch(function () {
+          return null;
         });
+    });
 
-        if (featured.length === 0) featured = repos.slice(0, 6);
-        renderProjects(featured);
+    Promise.all(promises)
+      .then(function (results) {
+        var repos = results.filter(Boolean);
+        if (repos.length > 0) {
+          renderProjects(repos);
+        } else {
+          renderProjects(buildFallback());
+        }
       })
       .catch(function () {
-        /* Fallback: render from static data */
-        var fallback = FEATURED_REPOS.map(function (name) {
-          return {
-            name: name,
-            html_url: 'https://github.com/' + USERNAME + '/' + name,
-            description: REPO_DESCRIPTIONS[name] || '',
-            language:
-              name === 'beginner-synth'
-                ? 'C++'
-                : name === 'guitar-hub'
-                ? 'JavaScript'
-                : name === 'code_genie'
-                ? 'Python'
-                : 'TypeScript'
-          };
-        });
-        renderProjects(fallback);
+        renderProjects(buildFallback());
       });
   }
 
