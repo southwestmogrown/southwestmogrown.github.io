@@ -10,537 +10,212 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-L59F1THNCT');
     </script>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shane M. Wilkey — Freelance Programmer & Agentic Engineer. 6+ years of coding and instruction experience." />
+    <meta name="author" content="Shane M. Wilkey" />
+    <title>Shane M. Wilkey | Freelance Programmer &amp; Agentic Engineer</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <title>Shane M. Wilkey</title>
-<!--
-Reflux Template
-https://templatemo.com/tm-531-reflux
--->
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <div id="page-wraper">
-      <!-- Sidebar Menu -->
-      <div class="responsive-nav">
-        <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
-          <i class="fa fa-times" id="menu-close"></i>
-          <div class="container">
-            <div class="image">
-              <a href="#"><img src="assets/images/shane-profile.jpg" alt="" /></a>
-            </div>
-            <div class="author-content">
-              <h4>Shane M. Wilkey</h4>
-              <span>Full Stack Web Developer</span>
-            </div>
-            <nav class="main-nav" role="navigation">
-              <ul class="main-menu">
-                <li><a href="#section1">About Me</a></li>
-                <li><a href="#section2">Skills</a></li>
-                <li><a href="#section3">My Work</a></li>
-                <li><a href="#section4">Contact Me</a></li>
-              </ul>
-            </nav>
-            <div class="social-network">
-              <ul class="social-icons">
-                <li>
-                  <a href="https://github.com/southwestmogrown"
-                    ><i class="fa fa-github"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://angel.co/u/shane-wilkey"
-                  ><i class="fa fa-angellist"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/shane-wilkey-b5822b210/"
-                  ><i class="fa fa-linkedin"></i></a>
-                </li>
-              </ul>
-            </div>
-            <div class="copyright-text">
-              <p>Copyright 2021 Shane M. Wilkey</p>
-            </div>
+    <!-- ===== Navigation ===== -->
+    <nav class="nav">
+      <a href="#" class="nav__logo">shane<span>.dev</span></a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-glow"></div>
+      <div class="container">
+        <div class="hero__text">
+          <p class="hero__greeting">Hi, I'm</p>
+          <h1 class="hero__name">Shane M. <span>Wilkey</span></h1>
+          <p class="hero__title">Freelance Programmer &amp; Agentic Engineer</p>
+          <p class="hero__desc">
+            6+ years of coding and instruction experience. I excel at finding
+            solutions that help teams meet or exceed output expectations — from
+            full-stack web apps to AI-powered agentic workflows.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View Projects</a>
+            <a href="https://github.com/southwestmogrown" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="assets/images/shane-profile.jpg" alt="Shane M. Wilkey" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about">
+      <div class="container">
+        <span class="section-label fade-up">About Me</span>
+        <h2 class="section-title fade-up">Engineer. Musician. Father.</h2>
+        <p class="section-subtitle fade-up">
+          Lifelong tech enthusiast turned freelance programmer and agentic engineer.
+          I build full-stack applications, design AI agent pipelines, and love
+          turning complex problems into clean, working software.
+        </p>
+
+        <div class="about__grid">
+          <div class="about__card fade-up">
+            <div class="about__card-icon">💻</div>
+            <h3>Developer &amp; Instructor</h3>
+            <p>
+              6+ years of hands-on coding and teaching experience across multiple
+              languages and frameworks. Passionate about mentoring the next
+              generation of engineers.
+            </p>
+          </div>
+          <div class="about__card fade-up">
+            <div class="about__card-icon">🤖</div>
+            <h3>Agentic Engineer</h3>
+            <p>
+              Building intelligent agent workflows with CrewAI, LLMs, and custom
+              toolchains. Specializing in AI-augmented development and automation.
+            </p>
+          </div>
+          <div class="about__card fade-up">
+            <div class="about__card-icon">🎸</div>
+            <h3>Musician &amp; Composer</h3>
+            <p>
+              Multi-instrumentalist and composer. Music fuels my creativity and
+              problem-solving — from writing riffs to writing code.
+            </p>
+          </div>
+          <div class="about__card fade-up">
+            <div class="about__card-icon">👨‍👩‍👧‍👦</div>
+            <h3>Husband &amp; Father of 4</h3>
+            <p>
+              Family is my foundation. Being a dad of four has taught me
+              patience, time management, and the art of solving chaos with
+              creativity.
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <section class="section about-me" data-section="section1">
-        <div class="container">
-          <div class="section-heading">
-            <h2>About Me</h2>
-            <div class="line-dec"></div>
-            <span
-              >I am a FullStack Web Developer with a wealth of experience in the food, beverage, and live enterainment 
-                industry. When I realized I wanted more out of life I made the transition to software development. 
-                I am no stranger to working under pressure, and can definitely take the heat. Being a Chef has made me highly 
-                adaptive and as an engineer I have leveraged this trait to be able to quickly learn new technologies and use them on the fly.
-                I'm ready to use my skills as a software engineer
-                alongside alongside my proven skills as a leader and problem solver to provide solutions to your growing business.
-                 </span
-            >
-          </div>
-          <div class="left-image-post about-me">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="right-text">
-                  <div class="white-button">
-                    <a href="https://drive.google.com/file/d/1DP8_zKtGJhaf7pdTlIctuL9TXP2alPH_/view" target="_blank">Resume</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- ===== Skills ===== -->
+    <section id="skills">
+      <div class="container">
+        <span class="section-label fade-up">Tech Stack</span>
+        <h2 class="section-title fade-up">Skills &amp; Technologies</h2>
+        <p class="section-subtitle fade-up">
+          From front-end interfaces to back-end systems and AI agents — these are
+          the tools I reach for every day.
+        </p>
+
+        <div class="skills__grid fade-up">
+          <div class="skill-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+          <div class="skill-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+          <div class="skill-tag"><i class="devicon-python-plain colored"></i> Python</div>
+          <div class="skill-tag"><i class="devicon-go-original-wordmark colored"></i> Go</div>
+          <div class="skill-tag"><i class="devicon-cplusplus-plain colored"></i> C++</div>
+          <div class="skill-tag"><i class="devicon-react-original colored"></i> React</div>
+          <div class="skill-tag"><i class="devicon-nextjs-plain"></i> Next.js</div>
+          <div class="skill-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+          <div class="skill-tag"><i class="devicon-express-original"></i> Express</div>
+          <div class="skill-tag"><i class="devicon-flask-original"></i> Flask</div>
+          <div class="skill-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+          <div class="skill-tag"><i class="devicon-prisma-original"></i> Prisma</div>
+          <div class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</div>
+          <div class="skill-tag"><i class="devicon-git-plain colored"></i> Git</div>
+          <div class="skill-tag"><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS</div>
+          <div class="skill-tag"><i class="devicon-redux-original colored"></i> Redux</div>
+          <div class="skill-tag"><i class="devicon-html5-plain colored"></i> HTML5</div>
+          <div class="skill-tag"><i class="devicon-css3-plain colored"></i> CSS3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <span class="section-label fade-up">Portfolio</span>
+        <h2 class="section-title fade-up">Featured Projects</h2>
+        <p class="section-subtitle fade-up">
+          A selection of recent work — from AI agent pipelines to real-time
+          collaborative apps and creative coding experiments.
+        </p>
+
+        <div class="projects__grid" id="projects-grid">
+          <div class="projects__loading">
+            <div class="spinner"></div>
+            <p>Loading projects from GitHub&hellip;</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section my-services" data-section="section2">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Skills</h2>
-            <div class="line-dec"></div>
-            <!-- <span
-              >Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor.
-              Vestibulum congue leo et tellus aliquam, eu viverra nulla semper.
-              Nullam eu faucibus diam. Donec eget massa ante.</span> -->
-          </div>
-          <ul class='icons my-services'>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-javascript-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-html5-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-react-original colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-python-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-flask-original-wordmark"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-express-original-wordmark"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-nodejs-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-css3-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-postgresql-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-mocha-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-sequelize-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-git-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-github-original-wordmark"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-sqlalchemy-plain"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-redux-original"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-bootstrap-plain"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-docker-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-heroku-plain-wordmark colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-nginx-original"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-npm-original-wordmark colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-ubuntu-plain colored"></i>
-              </span>
-            </li>
-            <li>
-              <span class="icon my-services">
-                <i class="dev-i devicon-amazonwebservices-original colored"></i>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <div class="container">
+        <span class="section-label fade-up">Get in Touch</span>
+        <h2 class="section-title fade-up">Let's Work Together</h2>
 
-      <section class="section my-work" data-section="section3">
-        <div class="container">
-          <div class="section-heading">
-            <h2>My Work</h2>
-            <div class="line-dec"></div>
-            <!-- <span
-              >Aenean sollicitudin ex mauris, lobortis lobortis diam euismod sit
-              amet. Duis ac elit vulputate, lobortis arcu quis, vehicula
-              mauris.</span
-            > -->
-          </div>
-          <div class="row">
-            <div class="isotope-wrapper">
-              <div class="isotope-box">
-                <div class="isotope-item" data-type="nature">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/salt-n-prepper.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="https://github.com/southwestmogrown/saltandpreppr"
-                        target="_blank"
-                        ><i class="fa fa-github"></i
-                      ></a>
-                      <a
-                        href="https://saltandpreppr.herokuapp.com"
-                        target="_blank"
-                        ><i class="fa fa-globe"></i
-                      ></a>
-                      <h4>Salt & Preppr</h4>
-                      <span>An online meal prep and recipe book.</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/zorro-investing.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="https://github.com/cheshirekate8/robinHoodClone"
-                        target="_blank"
-                        ><i class="fa fa-github"></i
-                      ></a>
-                      <a
-                        href="https://zorro-investing.herokuapp.com/"
-                        target="_blank"
-                        ><i class="fa fa-globe"></i
-                      ></a>
-                      <h4>Zorro Investing</h4>
-                      <span>Try your hand at the real stock markets with no risk!</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <!-- <div class="isotope-item" data-type="animals">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-03.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-03.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Item Third</h4>
-                      <span>customize anything</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-04.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-04.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Item Fourth</h4>
-                      <span>Re-distribution not allowed</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="nature">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-05.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-05.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Fifth Awesome</h4>
-                      <span>Ut sollicitudin risus</span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="animals">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-06.jpg"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-06.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>Awesome Sixth</h4>
-                      <span>Donec eget massa ante</span>
-                    </figcaption>
-                  </figure>
-                </div> -->
-              </div>
+        <div class="contact__content fade-up">
+          <div class="contact__info">
+            <p>
+              Whether you need a freelance developer, an agentic AI solution, or
+              just want to chat about code, music, or Fallout — I'd love to hear
+              from you.
+            </p>
+            <div class="contact__socials">
+              <a href="https://github.com/southwestmogrown" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/shane-wilkey-b5822b210/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="section contact-me" data-section="section4">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Contact Me</h2>
-            <div class="social-network">
-              <ul class="soial-icons">
-                <li>
-                  <a href="https://github.com/southwestmogrown"
-                    ><i class="fa fa-github"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://angel.co/u/shane-wilkey"
-                  ><i class="fa fa-angellist"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/shane-wilkey-b5822b210/"
-                  ><i class="fa fa-linkedin"></i></a>
-                </li>
-              </ul>
-            </div>
-            <div class="line-dec"></div>
-            <!-- <span
-              >Fusce eget nibh nec justo interdum condimentum. Morbi justo ex,
-              efficitur at ante ac, tincidunt maximus ligula. Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit.</span
-            > -->
-          </div>
-          
-          <div class="row">
-            <div class="right-content">
-              <div class="container">
-                <form id="contact" action="https://formspree.io/f/mayalnrb" method="post">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input
-                          name="name"
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          placeholder="Your name..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-6">
-                      <fieldset>
-                        <input
-                          name="email"
-                          type="text"
-                          class="form-control"
-                          id="email"
-                          placeholder="Your email..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input
-                          name="subject"
-                          type="text"
-                          class="form-control"
-                          id="subject"
-                          placeholder="Subject..."
-                          required=""
-                        />
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <textarea
-                          name="message"
-                          rows="6"
-                          class="form-control"
-                          id="message"
-                          placeholder="Your message..."
-                          required=""
-                        ></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        
-                        <button type="submit" id="form-submit" class="button">
-                          Send Message
-                        </button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <form class="contact__form" action="https://formspree.io/f/mayalnrb" method="post">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </form>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <p>&copy; 2025 Shane M. Wilkey. Built with ☕ and curiosity.</p>
+    </footer>
 
     <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-      //according to loftblog tut
-      $(".main-menu li:first").addClass("active");
-
-      var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ""),
-          reqSection = $(".section").filter(
-            '[data-section="' + direction + '"]'
-          ),
-          reqSectionPos = reqSection.offset().top - 0;
-
-        if (isAnimate) {
-          $("body, html").animate(
-            {
-              scrollTop: reqSectionPos
-            },
-            800
-          );
-        } else {
-          $("body, html").scrollTop(reqSectionPos);
-        }
-      };
-
-      var checkSection = function checkSection() {
-        $(".section").each(function() {
-          var $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-          if (topEdge < wScroll && bottomEdge > wScroll) {
-            var currentId = $this.data("section"),
-              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-            reqLink
-              .closest("li")
-              .addClass("active")
-              .siblings()
-              .removeClass("active");
-          }
-        });
-      };
-
-      $(".main-menu").on("click", "a", function(e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
-
-      $(window).scroll(function() {
-        checkSection();
-      });
-    </script>
+    <script src="assets/js/portfolio.js"></script>
   </body>
 </html>
