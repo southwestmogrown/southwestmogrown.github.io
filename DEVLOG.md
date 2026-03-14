@@ -11,26 +11,13 @@ to `undefined`.  Without a guard, every `fetch()` inside the widget would fire a
 the literal string `"undefined/..."`, fail silently, and lock the widget into a permanent
 error state.
 
-### Fix
+### Resolution
 
-Created **`src/components/FolioChat.jsx`** with an early-return guard at component entry:
-
-```js
-if (!endpoint) {
-  console.warn('FolioChat: endpoint prop is required')
-  return null
-}
-```
-
-This means:
-- When the env var is missing the widget is simply not rendered — no broken requests,
-  no UI error state.
-- When the env var is present the full chat widget renders as expected.
-
-### Additional changes
+`FolioChat` is not needed in the current portfolio and was removed entirely.  
+No broken `fetch` calls, no permanent error state, no dead code.
 
 | File | Change |
 |---|---|
-| `src/components/FolioChat.jsx` | New file — floating chat widget with `endpoint` guard |
-| `src/App.jsx` | Import `FolioChat` and render it with the env-var prop |
-| `src/style.css` | Added `.foliochat-*` CSS variables / rules for the widget UI |
+| `src/components/FolioChat.jsx` | Removed — component not needed |
+| `src/App.jsx` | Removed FolioChat import and usage |
+| `src/style.css` | Removed `.foliochat-*` CSS rules |
