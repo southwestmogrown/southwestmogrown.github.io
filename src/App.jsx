@@ -5,7 +5,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import { FolioChat } from '@foliochat/react'
+import { FolioChat } from './components/FolioChat'
 
 export default function App() {
   return (

@@ -47,7 +47,7 @@ const THEMES = {
 
 // ── FolioChat component ───────────────────────────────────────────────────────
 
-export function FolioChat({
+export function FolioChatWidget({
   endpoint,
   theme = "dark",
   position = "bottom-right",
@@ -416,6 +416,16 @@ export function FolioChat({
       </div>
     </div>
   );
+}
+
+// ── Public export with entry-point guard ──────────────────────────────────────
+
+export function FolioChat(props: FolioChatProps) {
+  if (!props.endpoint) {
+    console.warn("FolioChat: missing endpoint prop — widget will not render. Set VITE_FOLIOCHAT_API_URL environment variable.");
+    return null;
+  }
+  return <FolioChatWidget {...props} />;
 }
 
 export default FolioChat;
