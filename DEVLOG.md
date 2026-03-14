@@ -1,5 +1,21 @@
 # DEVLOG
 
+## 2026-03-14 — FolioChat is live
+
+All 7 issues from the code review have been resolved and FolioChat is confirmed working in production. Issues fixed across two sessions:
+
+- **Issue 1** — Guard against undefined `endpoint` prop
+- **Issue 2** — Corrected import to use local `FolioChat.tsx` instead of `@foliochat/react`
+- **Issue 3** — Error state recovery: added Retry button and re-fetch on widget open
+- **Issue 4** — AbortController on context fetch to prevent stale state updates after unmount
+- **Issue 5** — Passive scroll listener in Nav to unblock compositor thread
+- **Issue 6** — Accessible `<label>` elements on all Contact form inputs (WCAG 2.1 SC 1.3.1)
+- **Issue 7** — CI secret validation step to fail fast if `VITE_FOLIOCHAT_API_URL` is unset
+
+**Next:** UI/UX redesign.
+
+---
+
 ## 2026-03-14 — Fix Issue 5: Nav scroll listener is not passive — blocks compositor thread
 
 **File:** `src/components/Nav.jsx:24`
