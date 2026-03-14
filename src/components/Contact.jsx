@@ -59,7 +59,9 @@ export default function Contact() {
             action="https://formspree.io/f/mayalnrb"
             method="post"
           >
+            <label htmlFor="contact-name" className="sr-only">Your name</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               placeholder="Your name"
@@ -67,7 +69,9 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+            <label htmlFor="contact-email" className="sr-only">Your email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
               placeholder="Your email"
@@ -75,7 +79,9 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+            <label htmlFor="contact-subject" className="sr-only">Subject</label>
             <input
+              id="contact-subject"
               type="text"
               name="subject"
               placeholder="Subject"
@@ -83,7 +89,9 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
+            <label htmlFor="contact-message" className="sr-only">Your message</label>
             <textarea
+              id="contact-message"
               name="message"
               rows="5"
               placeholder="Your message..."
