@@ -47,7 +47,7 @@ const THEMES = {
 
 // ── FolioChat component ───────────────────────────────────────────────────────
 
-function FolioChatWidget({
+export function FolioChatWidget({
   endpoint,
   theme = "dark",
   position = "bottom-right",
