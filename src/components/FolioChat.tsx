@@ -81,19 +81,30 @@ export function FolioChatWidget({
     theme === "auto" ? (systemDark ? "dark" : "light") : theme;
   const colors = THEMES[resolvedTheme];
 
-  // Fetch context on mount
-  useEffect(() => {
-    fetch(`${endpoint}/context`)
+  // Fetch context; extracted so it can be called manually (Retry) or by effects
+  const fetchContext = useCallback((signal?: AbortSignal) => {
+    setError(null);
+    fetch(`${endpoint}/context`, signal ? { signal } : undefined)
       .then((r) => r.json())
       .then((data) => {
         setContext(data);
         const openingGreeting = greeting || data.greeting || "Hi! Ask me about this developer's projects.";
         setMessages([{ role: "assistant", content: openingGreeting }]);
       })
-      .catch(() => {
-        setError("Could not connect to FolioChat server.");
+      .catch((err: unknown) => {
+        if ((err as Error).name !== "AbortError") {
+          setError("Could not connect to FolioChat server.");
+        }
       });
   }, [endpoint, greeting]);
+
+  // Fetch context when the widget opens; skip if context already loaded successfully
+  useEffect(() => {
+    if (!open || context) return;
+    const controller = new AbortController();
+    fetchContext(controller.signal);
+    return () => controller.abort();
+  }, [open, context, fetchContext]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -256,6 +267,22 @@ export function FolioChatWidget({
             {error && (
               <div role="alert" style={{ color: "#ef4444", fontSize: "13px", textAlign: "center" }}>
                 {error}
+                <button
+                  onClick={() => fetchContext()}
+                  style={{
+                    display: "block",
+                    margin: "8px auto 0",
+                    background: "none",
+                    border: "1px solid #ef4444",
+                    borderRadius: "6px",
+                    color: "#ef4444",
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    padding: "4px 12px",
+                  }}
+                >
+                  Retry
+                </button>
               </div>
             )}
 
