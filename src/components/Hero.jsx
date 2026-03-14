@@ -10,11 +10,11 @@ export default function Hero() {
           <h1 className="hero__name">
             Shane M. <span>Wilkey</span>
           </h1>
-          <p className="hero__title">Freelance Programmer &amp; Agentic Engineer</p>
+          <p className="hero__title">Full-Stack Dev · AI Engineer · Instructor</p>
           <p className="hero__desc">
-            6+ years of coding and instruction experience. I excel at finding
-            solutions that help teams meet or exceed output expectations — from
-            full-stack web apps to AI-powered agentic workflows.
+            Six years building software and teaching it. I write agentic
+            workflows, run code reviews, and take on freelance work where
+            shipping something solid actually matters.
           </p>
           <div className="hero__actions">
             <a href="#projects" className="btn btn--primary">

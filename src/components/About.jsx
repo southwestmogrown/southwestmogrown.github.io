@@ -2,24 +2,24 @@ import { useFadeUp } from '../hooks/useFadeUp'
 
 const cards = [
   {
-    icon: '💻',
-    title: 'Developer & Instructor',
-    body: '6+ years of hands-on coding and teaching experience across multiple languages and frameworks. Passionate about mentoring the next generation of engineers.',
-  },
-  {
     icon: '🤖',
-    title: 'Agentic Engineer',
-    body: 'Building intelligent agent workflows with CrewAI, LLMs, and custom toolchains. Specializing in AI-augmented development and automation.',
+    title: 'AI-Aided Development',
+    body: 'Building with LLMs, CrewAI, and the Claude API. I design agentic workflows and automation pipelines that cut the tedious parts out of how dev teams work.',
   },
   {
-    icon: '🎸',
-    title: 'Musician & Composer',
-    body: 'Multi-instrumentalist and composer. Music fuels my creativity and problem-solving — from writing riffs to writing code.',
+    icon: '👨‍🏫',
+    title: 'Bootcamp Instructor',
+    body: 'Taught full-stack web development cohorts for 6+ years. From fundamentals to final projects — helping hundreds of students land their first engineering roles.',
   },
   {
-    icon: '👨‍👩‍👧‍👦',
-    title: 'Husband & Father of 4',
-    body: 'Family is my foundation. Being a dad of four has taught me patience, time management, and the art of solving chaos with creativity.',
+    icon: '🎯',
+    title: 'Leader & Process Builder',
+    body: 'Led cross-functional engineering teams, built code review cultures, and established delivery rhythms that keep quality high without slowing teams down.',
+  },
+  {
+    icon: '🚀',
+    title: 'Open for Freelance',
+    body: 'Taking on freelance projects in web development, AI tooling, and process improvement. If you have a specific problem and want someone who will think it through with you, reach out.',
   },
 ]
 
@@ -35,12 +35,12 @@ export default function About() {
           About Me
         </span>
         <h2 ref={titleRef} className={`section-title ${titleClass}`}>
-          Engineer. Musician. Father.
+          Engineer. Instructor. Builder.
         </h2>
         <p ref={subtitleRef} className={`section-subtitle ${subtitleClass}`}>
-          Lifelong tech enthusiast turned freelance programmer and agentic engineer.
-          I build full-stack applications, design AI agent pipelines, and love
-          turning complex problems into clean, working software.
+          Full-stack developer and bootcamp instructor. I&apos;ve spent six years
+          writing software, teaching it, and figuring out how to ship more of it
+          with less friction.
         </p>
 
         <div className="about__grid">

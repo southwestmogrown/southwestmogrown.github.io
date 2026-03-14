@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2025 Shane M. Wilkey. Built with ☕ and curiosity.</p>
+      <p>&copy; 2026 Shane M. Wilkey. Built with ☕ and curiosity.</p>
     </footer>
   )
 }
