@@ -1,5 +1,22 @@
 # DEVLOG
 
+## 2026-03-14 — Fix Issue 5: Nav scroll listener is not passive — blocks compositor thread
+
+**File:** `src/components/Nav.jsx:24`
+**Issue:** `window.addEventListener('scroll', handleScroll)` had no `{ passive: true }` option.
+The browser must hold the compositor thread waiting for this handler before every scroll frame,
+because it cannot know whether `preventDefault()` will be called. This degrades scroll
+performance, particularly on lower-end devices.
+
+### Changes Made
+
+- **Added `{ passive: true }`** to the `window.addEventListener('scroll', handleScroll, { passive: true })`
+  call in the `useEffect` hook inside `Nav.jsx`. This signals to the browser that the handler
+  will never call `preventDefault()`, allowing the compositor thread to proceed immediately
+  without blocking on each scroll event.
+
+---
+
 ## 2026-03-14 — Fix Issue 4: no `AbortController` on context fetch — state updates after unmount
 
 **File:** `src/components/FolioChat.tsx`
