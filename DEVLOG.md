@@ -1,5 +1,31 @@
 # DEVLOG
 
+## 2026-03-14 — Fix Issue 4: no `AbortController` on context fetch — state updates after unmount
+
+**File:** `src/components/FolioChat.tsx`
+**Issue:** The `/context` fetch lacked an abort mechanism. If the component unmounted before
+the fetch resolved, `setContext`, `setMessages`, or `setError` would be called on an unmounted
+component. This also caused React 18 Strict Mode to fire a redundant in-flight fetch on the
+second effect invocation with no way to cancel the first. Additionally, the "Retry" button path
+called `fetchContext()` without any signal, leaving those fetches permanently unabortable.
+
+### Changes Made
+
+- **Added `fetchControllerRef`** — a `useRef<AbortController | null>(null)` that tracks the
+  active controller for any in-flight `/context` request.
+- **`fetchContext` now owns its `AbortController`** — on every call it first aborts any
+  previous in-flight request (`fetchControllerRef.current?.abort()`), then creates a fresh
+  `AbortController`, stores it in the ref, and passes its signal to `fetch`. This covers both
+  the effect-triggered fetch and the manual Retry path without needing to thread a signal
+  parameter through the call site.
+- **`useEffect` cleanup uses the ref** — `return () => fetchControllerRef.current?.abort()`
+  ensures that when the widget is closed or the component unmounts, the active fetch is
+  cancelled and no stale state updates can fire.
+- **`AbortError` guard remains** — the `.catch` handler still checks `err.name !== "AbortError"`
+  so only genuine network failures surface to the UI.
+
+---
+
 ## 2026-03-14 — Fix Issue 3: error state permanently disables input with no recovery path
 
 **File:** `src/components/FolioChat.tsx`
