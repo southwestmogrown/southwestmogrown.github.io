@@ -67,6 +67,7 @@ export function FolioChatWidget({
   );
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const fetchControllerRef = useRef<AbortController | null>(null);
 
   // Live-track system color-scheme changes for "auto" theme
   useEffect(() => {
@@ -82,9 +83,12 @@ export function FolioChatWidget({
   const colors = THEMES[resolvedTheme];
 
   // Fetch context; extracted so it can be called manually (Retry) or by effects
-  const fetchContext = useCallback((signal?: AbortSignal) => {
+  const fetchContext = useCallback(() => {
+    fetchControllerRef.current?.abort();
+    const controller = new AbortController();
+    fetchControllerRef.current = controller;
     setError(null);
-    fetch(`${endpoint}/context`, signal ? { signal } : undefined)
+    fetch(`${endpoint}/context`, { signal: controller.signal })
       .then((r) => r.json())
       .then((data) => {
         setContext(data);
@@ -101,9 +105,8 @@ export function FolioChatWidget({
   // Fetch context when the widget opens; skip if context already loaded successfully
   useEffect(() => {
     if (!open || context) return;
-    const controller = new AbortController();
-    fetchContext(controller.signal);
-    return () => controller.abort();
+    fetchContext();
+    return () => fetchControllerRef.current?.abort();
   }, [open, context, fetchContext]);
 
   // Scroll to bottom on new messages
