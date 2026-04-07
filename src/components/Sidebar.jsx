@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { IDENTITY, OS_VERSION } from '../constants'
 
 const NAV_ITEMS = [
   { label: 'INDEX',    href: '#hero',     idx: '01' },
@@ -48,8 +49,8 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside className={`sidebar${menuOpen ? ' open' : ''}`}>
-        <div className="sidebar__identity">WILKEY.SHANE</div>
-        <div className="sidebar__version">V2.0.48 // SYSTEMS ARCHITECT</div>
+        <div className="sidebar__identity">{IDENTITY.name}</div>
+        <div className="sidebar__version">{OS_VERSION}</div>
 
         <nav aria-label="Primary navigation">
           <ul className="sidebar__nav">

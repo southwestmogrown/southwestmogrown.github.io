@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import { IDENTITY } from '../constants'
 
 const BOOT_LINES = [
-  { text: 'WILKEY_OS v2.0.48 — SYSTEMS ARCHITECT & TECHNICAL LEADER', cls: 'terminal__line--accent' },
+  { text: `WILKEY_OS ${IDENTITY.version} — SYSTEMS ARCHITECT & TECHNICAL LEADER`, cls: 'terminal__line--accent' },
   { text: 'Initializing primary systems...', cls: '' },
   { text: '  [OK] Full-stack engineering core loaded', cls: '' },
   { text: '  [OK] AI/ML pipeline subsystems online', cls: '' },

@@ -1,5 +1,7 @@
 import { useFadeUp } from '../hooks/useFadeUp'
 
+const PROFILE_URL = 'https://github.com/southwestmogrown'
+
 const SOLUTIONS = [
   {
     id: 'SOL-001',
@@ -7,7 +9,7 @@ const SOLUTIONS = [
     problem: 'Production floor lacked real-time visibility into shift metrics, leading to reactive decision-making.',
     solution: 'Built a live ops dashboard with WebSocket data streams, role-based access, and KPI trend analysis integrated with existing floor systems.',
     stack: ['React', 'Node.js', 'WebSockets', 'PostgreSQL', 'Docker'],
-    github: 'https://github.com/southwestmogrown',
+    sourceUrl: PROFILE_URL,
   },
   {
     id: 'SOL-002',
@@ -15,7 +17,7 @@ const SOLUTIONS = [
     problem: 'Kanban workflows across remote teams were fragmented across multiple tools with no single source of truth.',
     solution: 'Full-stack kanban board with real-time collaboration via native WebSockets, drag-and-drop, and persistent board state via PostgreSQL and Prisma.',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'WebSockets'],
-    github: 'https://github.com/southwestmogrown/kanboard',
+    sourceUrl: 'https://github.com/southwestmogrown/kanboard',
   },
   {
     id: 'SOL-003',
@@ -23,7 +25,7 @@ const SOLUTIONS = [
     problem: 'Engineers lacked a structured way to iterate, version, and evaluate LLM prompts across projects.',
     solution: 'Interactive prompt IDE with version history, side-by-side model comparison, and a CrewAI-powered evaluation pipeline for automated quality scoring.',
     stack: ['React', 'Python', 'Flask', 'CrewAI', 'Claude API'],
-    github: 'https://github.com/southwestmogrown',
+    sourceUrl: PROFILE_URL,
   },
   {
     id: 'SOL-004',
@@ -31,7 +33,7 @@ const SOLUTIONS = [
     problem: 'Manual resume screening was consuming 3+ hours per hiring cycle and introducing inconsistent evaluation.',
     solution: 'Agentic parser that extracts structured data, scores candidates against a job spec, and outputs ranked summaries — cutting review time by 80%.',
     stack: ['Python', 'CrewAI', 'Claude API', 'FastAPI', 'PostgreSQL'],
-    github: 'https://github.com/southwestmogrown',
+    sourceUrl: PROFILE_URL,
   },
 ]
 
@@ -65,7 +67,7 @@ export default function Projects() {
   )
 }
 
-function SolutionCard({ id, title, problem, solution, stack, github }) {
+function SolutionCard({ id, title, problem, solution, stack, sourceUrl }) {
   return (
     <article className="solution-card">
       <div className="solution-card__id">{id}</div>
@@ -89,7 +91,7 @@ function SolutionCard({ id, title, problem, solution, stack, github }) {
 
       <div className="solution-card__links">
         <a
-          href={github}
+          href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="solution-card__link"
