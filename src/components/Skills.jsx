@@ -24,24 +24,19 @@ const SKILLS = [
 export default function Skills() {
   const [labelRef, labelClass] = useFadeUp()
   const [titleRef, titleClass] = useFadeUp()
-  const [subtitleRef, subtitleClass] = useFadeUp()
   const [gridRef, gridClass] = useFadeUp()
 
   return (
-    <section id="skills">
+    <section id="skills" style={{ paddingTop: '0', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <span ref={labelRef} className={`section-label ${labelClass}`}>
-          Tech Stack
+          TECH STACK
         </span>
         <h2 ref={titleRef} className={`section-title ${titleClass}`}>
           Skills &amp; Technologies
         </h2>
-        <p ref={subtitleRef} className={`section-subtitle ${subtitleClass}`}>
-          From front-end interfaces to back-end systems and AI agents — these are
-          the tools I reach for every day.
-        </p>
 
-        <div ref={gridRef} className={`skills__grid ${gridClass}`}>
+        <div ref={gridRef} className={`skills-grid ${gridClass}`}>
           {SKILLS.map(({ icon, label }) => (
             <div className="skill-tag" key={label}>
               <i className={icon}></i> {label}
@@ -52,3 +47,4 @@ export default function Skills() {
     </section>
   )
 }
+

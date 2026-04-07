@@ -1,5 +1,6 @@
-import Nav from './components/Nav'
+import Sidebar from './components/Sidebar'
 import Hero from './components/Hero'
+import BentoGrid from './components/BentoGrid'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
@@ -10,19 +11,24 @@ import { FolioChat } from './components/FolioChat'
 export default function App() {
   return (
     <>
-      <Nav />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Sidebar />
+      <div className="main-layout">
+        <Hero />
+        <BentoGrid />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
       <FolioChat
         endpoint={import.meta.env.VITE_FOLIOCHAT_API_URL}
-        accentColor="#f97316"
-        theme="auto"
+        accentColor="#F26419"
+        theme="dark"
         position="bottom-right"
+        greeting="ENCRYPTED_COMMS ONLINE. Ask me about Shane's projects, skills, or background."
       />
-      <Footer />
     </>
   )
 }
+
