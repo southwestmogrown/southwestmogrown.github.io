@@ -2,24 +2,24 @@ import { useFadeUp } from '../hooks/useFadeUp'
 
 const cards = [
   {
-    icon: '🤖',
+    icon: '⚙',
     title: 'AI-Aided Development',
-    body: 'Building with LLMs, CrewAI, and the Claude API. I design agentic workflows and automation pipelines that cut the tedious parts out of how dev teams work.',
+    body: 'Building with LLMs, CrewAI, and the Claude API. Designing agentic workflows and automation pipelines that cut the tedious parts out of how dev teams operate.',
   },
   {
-    icon: '👨‍🏫',
+    icon: '📡',
     title: 'Bootcamp Instructor',
-    body: 'Taught full-stack web development cohorts for 6+ years. From fundamentals to final projects — helping hundreds of students land their first engineering roles.',
+    body: 'Taught full-stack web development cohorts for 6+ years. From fundamentals to final projects — 1,000+ engineers trained, 90% placement rate.',
   },
   {
-    icon: '🎯',
+    icon: '🔧',
     title: 'Leader & Process Builder',
-    body: 'Led cross-functional engineering teams, built code review cultures, and established delivery rhythms that keep quality high without slowing teams down.',
+    body: 'Led cross-functional engineering teams and 45-person value streams. Production-grade quality standards with 98% first pass yield.',
   },
   {
-    icon: '🚀',
+    icon: '🛠',
     title: 'Open for Freelance',
-    body: 'Taking on freelance projects in web development, AI tooling, and process improvement. If you have a specific problem and want someone who will think it through with you, reach out.',
+    body: 'Taking on freelance projects in web development, AI tooling, and process improvement. If you have a problem, reach out.',
   },
 ]
 
@@ -29,23 +29,22 @@ export default function About() {
   const [subtitleRef, subtitleClass] = useFadeUp()
 
   return (
-    <section className="about" id="about">
+    <section id="hardware" className="hardware">
       <div className="container">
         <span ref={labelRef} className={`section-label ${labelClass}`}>
-          About Me
+          HARDWARE
         </span>
         <h2 ref={titleRef} className={`section-title ${titleClass}`}>
           Engineer. Instructor. Builder.
         </h2>
         <p ref={subtitleRef} className={`section-subtitle ${subtitleClass}`}>
-          Full-stack developer and bootcamp instructor. I&apos;ve spent six years
-          writing software, teaching it, and figuring out how to ship more of it
-          with less friction.
+          Full-stack developer and bootcamp instructor. Six years writing
+          software, teaching it, and shipping more of it with less friction.
         </p>
 
-        <div className="about__grid">
+        <div className="hardware__grid">
           {cards.map((card) => (
-            <AboutCard key={card.title} {...card} />
+            <HardwareCard key={card.title} {...card} />
           ))}
         </div>
       </div>
@@ -53,13 +52,14 @@ export default function About() {
   )
 }
 
-function AboutCard({ icon, title, body }) {
+function HardwareCard({ icon, title, body }) {
   const [ref, cls] = useFadeUp()
   return (
-    <div ref={ref} className={`about__card ${cls}`}>
-      <div className="about__card-icon">{icon}</div>
-      <h3>{title}</h3>
-      <p>{body}</p>
+    <div ref={ref} className={`hardware-card ${cls}`}>
+      <div className="hardware-card__icon">{icon}</div>
+      <h3 className="hardware-card__title">{title}</h3>
+      <p className="hardware-card__body">{body}</p>
     </div>
   )
 }
+

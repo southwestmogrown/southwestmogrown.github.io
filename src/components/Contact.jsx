@@ -30,24 +30,25 @@ const contactCards = [
 export default function Contact() {
   const [labelRef, labelClass] = useFadeUp()
   const [titleRef, titleClass] = useFadeUp()
-  const [cardsRef, cardsClass] = useFadeUp()
+  const [subtitleRef, subtitleClass] = useFadeUp()
+  const [gridRef, gridClass] = useFadeUp()
 
   return (
-    <section id="contact">
+    <section id="contact" className="contact">
       <div className="container">
         <span ref={labelRef} className={`section-label ${labelClass}`}>
-          Get in Touch
+          CONTACT
         </span>
         <h2 ref={titleRef} className={`section-title ${titleClass}`}>
-          Let&apos;s Work Together
+          Open a Channel
         </h2>
-        <p className="contact__subtitle">
-          Open to freelance work — web development, AI tooling, process
+        <p ref={subtitleRef} className={`section-subtitle ${subtitleClass}`}>
+          Available for freelance work — web development, AI tooling, process
           improvement. If you have a problem that needs a developer who thinks
-          before they code, I&apos;m interested.
+          before they code, open a channel.
         </p>
 
-        <div ref={cardsRef} className={`contact__cards ${cardsClass}`}>
+        <div ref={gridRef} className={`contact__grid ${gridClass}`}>
           {contactCards.map((card) => (
             <a
               key={card.label}
@@ -66,3 +67,4 @@ export default function Contact() {
     </section>
   )
 }
+
