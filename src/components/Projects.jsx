@@ -14,10 +14,11 @@ const SOLUTIONS = [
   {
     id: 'SOL-002',
     title: 'Kaminify',
-    problem: 'Kanban workflows across remote teams were fragmented across multiple tools with no single source of truth.',
-    solution: 'Full-stack kanban board with real-time collaboration via native WebSockets, drag-and-drop, and persistent board state via PostgreSQL and Prisma.',
-    stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'WebSockets'],
-    sourceUrl: 'https://github.com/southwestmogrown/kanboard',
+    problem: 'Recreating a site\'s visual identity on different content required hours of manual CSS extraction and design-system templating with no repeatable workflow.',
+    solution: 'AI pipeline that accepts a design URL and a content URL, extracts the visual design system from the first, structures content from the second, and uses Claude to generate a cloned multi-page site — streamed progressively and downloadable as a ZIP.',
+    stack: ['Next.js', 'TypeScript', 'Claude API', 'Supabase', 'Tailwind CSS'],
+    sourceUrl: 'https://github.com/southwestmogrown/kaminify',
+    liveUrl: 'https://kaminify.com',
   },
   {
     id: 'SOL-003',
@@ -67,7 +68,7 @@ export default function Projects() {
   )
 }
 
-function SolutionCard({ id, title, problem, solution, stack, sourceUrl }) {
+function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl }) {
   return (
     <article className="solution-card">
       <div className="solution-card__id">{id}</div>
@@ -98,6 +99,16 @@ function SolutionCard({ id, title, problem, solution, stack, sourceUrl }) {
         >
           <i className="fa-brands fa-github"></i> SOURCE
         </a>
+        {liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="solution-card__link"
+          >
+            <i className="fa-solid fa-arrow-up-right-from-square"></i> LIVE
+          </a>
+        )}
       </div>
     </article>
   )
