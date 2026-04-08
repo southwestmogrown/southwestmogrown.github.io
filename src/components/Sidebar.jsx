@@ -72,19 +72,9 @@ export default function Sidebar() {
           </ul>
         </nav>
 
-        <div className="sidebar__cv">
-          <a
-            href="/assets/Shane_Wilkey_CV.pdf"
-            download
-            className="btn--cv"
-          >
-            ↓ DOWNLOAD_CV
-          </a>
-        </div>
-
         <div className="sidebar__footer">
-          <a href="#contact">HELP</a>
-          <a href="#firmware">TERMINAL</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#firmware">PROJECTS</a>
         </div>
       </aside>
     </>

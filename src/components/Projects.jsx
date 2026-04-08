@@ -1,15 +1,13 @@
 import { useFadeUp } from '../hooks/useFadeUp'
 
-const PROFILE_URL = 'https://github.com/southwestmogrown'
-
 const SOLUTIONS = [
   {
     id: 'SOL-001',
-    title: 'Ops Dashboard',
-    problem: 'Production floor lacked real-time visibility into shift metrics, leading to reactive decision-making.',
-    solution: 'Built a live ops dashboard with WebSocket data streams, role-based access, and KPI trend analysis integrated with existing floor systems.',
-    stack: ['React', 'Node.js', 'WebSockets', 'PostgreSQL', 'Docker'],
-    sourceUrl: PROFILE_URL,
+    title: 'Kanboard',
+    problem: 'Teams lacked a lightweight, self-hosted kanban tool with real-time collaboration and no SaaS lock-in.',
+    solution: 'Full-stack kanban board with real-time collaboration via native WebSockets. Supports drag-and-drop task management, live cursor presence, and instant sync across clients.',
+    stack: ['Next.js', 'TypeScript', 'WebSockets', 'PostgreSQL', 'Prisma'],
+    sourceUrl: 'https://github.com/southwestmogrown/kanboard',
   },
   {
     id: 'SOL-002',
@@ -24,17 +22,17 @@ const SOLUTIONS = [
     id: 'SOL-003',
     title: 'Prompt Playground',
     problem: 'Engineers lacked a structured way to iterate, version, and evaluate LLM prompts across projects.',
-    solution: 'Interactive prompt IDE with version history, side-by-side model comparison, and a CrewAI-powered evaluation pipeline for automated quality scoring.',
-    stack: ['React', 'Python', 'Flask', 'CrewAI', 'Claude API'],
-    sourceUrl: PROFILE_URL,
+    solution: 'Multi-model LLM prompt testing tool. Run any prompt against multiple AI models simultaneously, compare responses side by side, score them, and save runs for later review. Includes a demo mode for unauthenticated visitors.',
+    stack: ['Next.js', 'TypeScript', 'Claude API', 'Prisma', 'PostgreSQL'],
+    sourceUrl: 'https://github.com/southwestmogrown/prompt-playground',
   },
   {
     id: 'SOL-004',
     title: 'Resume Parser',
     problem: 'Manual resume screening was consuming 3+ hours per hiring cycle and introducing inconsistent evaluation.',
-    solution: 'Agentic parser that extracts structured data, scores candidates against a job spec, and outputs ranked summaries — cutting review time by 80%.',
-    stack: ['Python', 'CrewAI', 'Claude API', 'FastAPI', 'PostgreSQL'],
-    sourceUrl: PROFILE_URL,
+    solution: 'Parses a PDF resume and scores it against a job description using two sequential Claude API calls. Extracts structured data and outputs ranked summaries — cutting review time by 80%.',
+    stack: ['Next.js', 'TypeScript', 'Claude API', 'Tailwind CSS'],
+    sourceUrl: 'https://github.com/southwestmogrown/resume-parser',
   },
 ]
 
@@ -68,10 +66,18 @@ export default function Projects() {
   )
 }
 
-function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl }) {
+function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl, imageUrl }) {
   return (
     <article className="solution-card">
       <div className="solution-card__id">{id}</div>
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={`${title} screenshot`}
+          className="solution-card__image"
+          loading="lazy"
+        />
+      )}
       <h3 className="solution-card__title">{title}</h3>
 
       <div className="solution-card__problem">
