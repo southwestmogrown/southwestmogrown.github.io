@@ -3,11 +3,12 @@ import { useFadeUp } from '../hooks/useFadeUp'
 const SOLUTIONS = [
   {
     id: 'SOL-001',
-    title: 'Ops Dashboard',
+    title: 'Kinetic Command',
     problem: 'Production floor lacked real-time visibility into shift metrics, leading to reactive decision-making.',
     solution: 'Real-time operations dashboard for manufacturing floor KPI tracking. WebSocket data streams, role-based access, and trend analysis integrated with existing floor systems.',
     stack: ['Next.js', 'TypeScript', 'Recharts', 'Tailwind CSS'],
     sourceUrl: 'https://github.com/southwestmogrown/ops-dashboard-demo',
+    imageUrl: '/assets/images/projects/kinetic-command/Kinetic-Command-Dashboard.png',
   },
   {
     id: 'SOL-002',
@@ -17,14 +18,16 @@ const SOLUTIONS = [
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Supabase', 'Tailwind CSS'],
     sourceUrl: 'https://github.com/southwestmogrown/kaminify',
     liveUrl: 'https://kaminify.com',
+    imageUrl: '/assets/images/projects/kaminify/kaminify-splash.png',
   },
   {
     id: 'SOL-003',
-    title: 'Prompt Playground',
+    title: 'Prism',
     problem: 'Engineers lacked a structured way to iterate, version, and evaluate LLM prompts across projects.',
     solution: 'Multi-model LLM prompt testing tool. Run any prompt against multiple AI models simultaneously, compare responses side by side, score them, and save runs for later review. Includes a demo mode for unauthenticated visitors.',
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Prisma', 'PostgreSQL'],
     sourceUrl: 'https://github.com/southwestmogrown/prompt-playground',
+    imageUrl: '/assets/images/projects/prism/Prism-Demo.png',
   },
   {
     id: 'SOL-004',
@@ -33,6 +36,7 @@ const SOLUTIONS = [
     solution: 'Parses a PDF resume and scores it against a job description using two sequential Claude API calls. Extracts structured data and outputs ranked summaries — cutting review time by 80%.',
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Tailwind CSS'],
     sourceUrl: 'https://github.com/southwestmogrown/resume-parser',
+    imageUrl: '/assets/images/projects/resume-parser/Resume-Parser-Demo-Screen.png',
   },
 ]
 
