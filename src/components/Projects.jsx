@@ -3,11 +3,11 @@ import { useFadeUp } from '../hooks/useFadeUp'
 const SOLUTIONS = [
   {
     id: 'SOL-001',
-    title: 'Kanboard',
-    problem: 'Teams lacked a lightweight, self-hosted kanban tool with real-time collaboration and no SaaS lock-in.',
-    solution: 'Full-stack kanban board with real-time collaboration via native WebSockets. Supports drag-and-drop task management, live cursor presence, and instant sync across clients.',
-    stack: ['Next.js', 'TypeScript', 'WebSockets', 'PostgreSQL', 'Prisma'],
-    sourceUrl: 'https://github.com/southwestmogrown/kanboard',
+    title: 'Ops Dashboard',
+    problem: 'Production floor lacked real-time visibility into shift metrics, leading to reactive decision-making.',
+    solution: 'Real-time operations dashboard for manufacturing floor KPI tracking. WebSocket data streams, role-based access, and trend analysis integrated with existing floor systems.',
+    stack: ['Next.js', 'TypeScript', 'Recharts', 'Tailwind CSS'],
+    sourceUrl: 'https://github.com/southwestmogrown/ops-dashboard-demo',
   },
   {
     id: 'SOL-002',

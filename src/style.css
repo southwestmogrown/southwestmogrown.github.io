@@ -8,7 +8,7 @@
   --accent-dim:  rgba(242, 100, 25, 0.15);
   --border:      #333333;
   --text:        #EDEDED;
-  --text-muted:  #8a8a8a;
+  --text-muted:  #999999;
   --sidebar-w:   240px;
   --transition:  0.15s ease;
   --font-mono:   'JetBrains Mono', 'Courier New', monospace;
@@ -148,13 +148,39 @@ img {
   min-width: 1.2rem;
 }
 
-/* sidebar footer */
-.sidebar__footer {
+.sidebar__cv {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
+}
+
+.btn--cv {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn--cv:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* sidebar footer */
+.sidebar__footer {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .sidebar__footer a {
