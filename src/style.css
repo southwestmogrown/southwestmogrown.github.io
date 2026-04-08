@@ -6,9 +6,9 @@
   --bg-card-hover: #1a1a1a;
   --accent:      #F26419;
   --accent-dim:  rgba(242, 100, 25, 0.15);
-  --border:      #262626;
+  --border:      #333333;
   --text:        #EDEDED;
-  --text-muted:  #6b6b6b;
+  --text-muted:  #999999;
   --sidebar-w:   240px;
   --transition:  0.15s ease;
   --font-mono:   'JetBrains Mono', 'Courier New', monospace;
@@ -176,6 +176,7 @@ img {
   color: var(--bg);
 }
 
+/* sidebar footer */
 .sidebar__footer {
   display: flex;
   gap: 1rem;
@@ -645,6 +646,13 @@ section {
   font-size: 0.6rem;
   color: var(--text-muted);
   letter-spacing: 2px;
+}
+
+.solution-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 
 .solution-card__title {
