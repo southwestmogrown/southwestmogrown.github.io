@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, type RefObject } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -69,6 +69,7 @@ function FolioChatWidget({
   );
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const fetchControllerRef: RefObject<AbortController | null> = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (theme !== "auto") return;
@@ -82,18 +83,30 @@ function FolioChatWidget({
     theme === "auto" ? (systemDark ? "dark" : "light") : theme;
   const colors = THEMES[resolvedTheme];
 
-  useEffect(() => {
-    fetch(`${endpoint}/context`)
+  const fetchContext = useCallback(() => {
+    fetchControllerRef.current?.abort();
+    const controller = new AbortController();
+    fetchControllerRef.current = controller;
+    setError(null);
+    fetch(`${endpoint}/context`, { signal: controller.signal })
       .then((r) => r.json())
       .then((data) => {
         setContext(data);
         const openingGreeting = greeting || data.greeting || "ENCRYPTED_COMMS ONLINE.";
         setMessages([{ role: "assistant", content: openingGreeting }]);
       })
-      .catch(() => {
-        setError("CONNECTION REFUSED. CHECK ENDPOINT.");
+      .catch((err: unknown) => {
+        if ((err as Error).name !== "AbortError") {
+          setError("CONNECTION REFUSED. CHECK ENDPOINT.");
+        }
       });
   }, [endpoint, greeting]);
+
+  useEffect(() => {
+    if (!open || context) return;
+    fetchContext();
+    return () => fetchControllerRef.current?.abort();
+  }, [open, context, fetchContext]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
