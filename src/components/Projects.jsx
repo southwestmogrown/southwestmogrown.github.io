@@ -9,6 +9,7 @@ const SOLUTIONS = [
     stack: ['Next.js', 'TypeScript', 'Recharts', 'Tailwind CSS'],
     sourceUrl: 'https://github.com/southwestmogrown/ops-dashboard-demo',
     imageUrl: '/assets/images/projects/kinetic-command/Kinetic-Command-Dashboard.png',
+    liveUrl: 'https://ops-dashboard-demo.vercel.app/',
   },
   {
     id: 'SOL-002',
@@ -28,6 +29,7 @@ const SOLUTIONS = [
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Prisma', 'PostgreSQL'],
     sourceUrl: 'https://github.com/southwestmogrown/prompt-playground',
     imageUrl: '/assets/images/projects/prism/Prism-Demo.png',
+    liveUrl: 'https://prompt-playground-weld.vercel.app/',
   },
   {
     id: 'SOL-004',
@@ -37,6 +39,7 @@ const SOLUTIONS = [
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Tailwind CSS'],
     sourceUrl: 'https://github.com/southwestmogrown/resume-parser',
     imageUrl: '/assets/images/projects/resume-parser/Resume-Parser-Demo-Screen.png',
+    liveUrl: 'https://resume-parser-ten-mu.vercel.app/',
   },
 ]
 
