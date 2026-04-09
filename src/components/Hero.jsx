@@ -8,6 +8,7 @@ const BOOT_LINES = [
   { text: '  [OK] AI/ML pipeline subsystems online', cls: '' },
   { text: '  [OK] Production supervision module active', cls: '' },
   { text: '  [OK] Instruction & mentorship engine ready', cls: '' },
+  { text: '  [OK] foliochat_daemon started — encrypted comms online', cls: '' },
   { text: 'Security protocols: SECURITY+ / AWS CERTIFIED', cls: 'terminal__line--dim' },
   { text: 'Status: ALL SYSTEMS OPTIMAL', cls: 'terminal__line--accent' },
   { text: '$ _', cls: '' },
@@ -50,6 +51,12 @@ export default function Hero() {
             >
               [ VIEW SOURCE ]
             </a>
+            <button
+              className="btn btn--accent"
+              onClick={() => window.dispatchEvent(new CustomEvent('foliochat:open'))}
+            >
+              [ ASK FOLIOCHAT ]
+            </button>
           </div>
         </div>
 

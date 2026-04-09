@@ -72,6 +72,13 @@ export default function Sidebar() {
           </ul>
         </nav>
 
+        <div className="sidebar__foliochat">
+          <a href="/projects/foliochat" className="sidebar__foliochat-link">
+            <span className="sidebar__foliochat-label">FOLIOCHAT</span>
+            <span className="sidebar__foliochat-status">● ACTIVE</span>
+          </a>
+        </div>
+
         <div className="sidebar__cv">
           <a
             href="/assets/Shane_Wilkey_CV.pdf"

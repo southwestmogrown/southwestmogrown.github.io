@@ -129,6 +129,12 @@ function FolioChatWidget({
     return () => window.removeEventListener("keydown", handleWindowKey);
   }, [handleWindowKey]);
 
+  useEffect(() => {
+    const handleExternalOpen = () => setOpen(true);
+    window.addEventListener("foliochat:open", handleExternalOpen);
+    return () => window.removeEventListener("foliochat:open", handleExternalOpen);
+  }, []);
+
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
 

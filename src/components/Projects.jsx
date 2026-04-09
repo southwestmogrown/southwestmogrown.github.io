@@ -2,6 +2,18 @@ import { useFadeUp } from '../hooks/useFadeUp'
 
 const SOLUTIONS = [
   {
+    id: 'SOL-000',
+    title: 'FolioChat',
+    problem: 'Portfolio sites are static and passive — visitors scroll once and leave without experiencing the depth behind the work.',
+    solution: 'AI-powered portfolio chat assistant with live GitHub context. Fetches real repo data, answers questions about projects, skills, and background in real time. Embeddable widget — active on this page.',
+    stack: ['TypeScript', 'React', 'Claude API', 'GitHub API'],
+    sourceUrl: null,
+    liveUrl: null,
+    detailUrl: '/projects/foliochat',
+    imageUrl: null,
+    featured: true,
+  },
+  {
     id: 'SOL-001',
     title: 'Kinetic Command',
     problem: 'Production floor lacked real-time visibility into shift metrics, leading to reactive decision-making.',
@@ -73,9 +85,9 @@ export default function Projects() {
   )
 }
 
-function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl, imageUrl }) {
+function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl, imageUrl, detailUrl, featured }) {
   return (
-    <article className="solution-card">
+    <article className={`solution-card${featured ? ' solution-card--featured' : ''}`}>
       <div className="solution-card__id">{id}</div>
       {imageUrl && (
         <img
@@ -104,14 +116,16 @@ function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl,
       </div>
 
       <div className="solution-card__links">
-        <a
-          href={sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="solution-card__link"
-        >
-          <i className="fa-brands fa-github"></i> SOURCE
-        </a>
+        {sourceUrl && (
+          <a
+            href={sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="solution-card__link"
+          >
+            <i className="fa-brands fa-github"></i> SOURCE
+          </a>
+        )}
         {liveUrl && (
           <a
             href={liveUrl}
@@ -120,6 +134,11 @@ function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl,
             className="solution-card__link"
           >
             <i className="fa-solid fa-arrow-up-right-from-square"></i> LIVE
+          </a>
+        )}
+        {detailUrl && (
+          <a href={detailUrl} className="solution-card__link solution-card__link--detail">
+            <i className="fa-solid fa-file-lines"></i> DEEP DIVE
           </a>
         )}
       </div>
