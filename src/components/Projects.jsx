@@ -22,6 +22,7 @@ const SOLUTIONS = [
     sourceUrl: 'https://github.com/southwestmogrown/ops-dashboard-demo',
     imageUrl: '/assets/images/projects/kinetic-command/Kinetic-Command-Dashboard.png',
     liveUrl: 'https://ops-dashboard-demo.vercel.app/',
+    detailUrl: '/projects/kinetic-command',
   },
   {
     id: 'SOL-002',
@@ -32,6 +33,7 @@ const SOLUTIONS = [
     sourceUrl: 'https://github.com/southwestmogrown/kaminify',
     liveUrl: 'https://kaminify.com',
     imageUrl: '/assets/images/projects/kaminify/kaminify-splash.png',
+    detailUrl: '/projects/kaminify',
   },
   {
     id: 'SOL-003',
@@ -42,6 +44,7 @@ const SOLUTIONS = [
     sourceUrl: 'https://github.com/southwestmogrown/prompt-playground',
     imageUrl: '/assets/images/projects/prism/prism-landing.png',
     liveUrl: 'https://prompt-playground-weld.vercel.app/',
+    detailUrl: '/projects/prism',
   },
   {
     id: 'SOL-004',
@@ -52,6 +55,7 @@ const SOLUTIONS = [
     sourceUrl: 'https://github.com/southwestmogrown/resume-parser',
     imageUrl: '/assets/images/projects/resume-parser/Resume-Parser-Demo-Screen.png',
     liveUrl: 'https://resume-parser-ten-mu.vercel.app/',
+    detailUrl: '/projects/resume-parser',
   },
   {
     id: 'SOL-005',
@@ -62,6 +66,7 @@ const SOLUTIONS = [
     sourceUrl: 'https://github.com/southwestmogrown/quizquest',
     imageUrl: '/assets/images/projects/quizquest/quizquest-dashboard.png',
     liveUrl: 'https://quizquest-5g96.onrender.com/',
+    detailUrl: '/projects/quizquest',
   },
 ]
 

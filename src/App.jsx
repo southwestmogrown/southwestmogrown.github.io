@@ -9,6 +9,12 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { FolioChat } from './components/FolioChat'
 import FolioChatPage from './pages/foliochat'
+import KineticCommandPage from './pages/kinetic-command'
+import KaminifyPage from './pages/kaminify'
+import PrismPage from './pages/prism'
+import ResumeParserPage from './pages/resume-parser'
+import QuizQuestPage from './pages/quizquest'
+import WritingPage from './pages/writing'
 
 function HomeLayout() {
   return (
@@ -39,6 +45,12 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomeLayout />} />
       <Route path="/projects/foliochat" element={<FolioChatPage />} />
+      <Route path="/projects/kinetic-command" element={<KineticCommandPage />} />
+      <Route path="/projects/kaminify" element={<KaminifyPage />} />
+      <Route path="/projects/prism" element={<PrismPage />} />
+      <Route path="/projects/resume-parser" element={<ResumeParserPage />} />
+      <Route path="/projects/quizquest" element={<QuizQuestPage />} />
+      <Route path="/writing" element={<WritingPage />} />
     </Routes>
   )
 }

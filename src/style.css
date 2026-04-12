@@ -1119,6 +1119,22 @@ section {
   color: var(--accent);
 }
 
+.project-page__prose img {
+  width: 100%;
+  max-width: 720px;
+  border: 1px solid var(--border);
+  margin: 1.5em 0;
+  display: block;
+}
+
+.project-page__prose video {
+  width: 100%;
+  max-width: 720px;
+  border: 1px solid var(--border);
+  margin: 1.5em 0;
+  display: block;
+}
+
 .project-page__empty {
   color: var(--text-muted);
   font-size: 0.65rem;
