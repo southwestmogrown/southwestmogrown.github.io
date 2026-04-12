@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { IDENTITY, OS_VERSION } from '../constants'
+import { SOLUTIONS } from './Projects'
 
 const NAV_ITEMS = [
   { label: 'INDEX',    href: '#hero',     idx: '01' },
@@ -72,11 +73,20 @@ export default function Sidebar() {
           </ul>
         </nav>
 
-        <div className="sidebar__foliochat">
-          <a href="/projects/foliochat" className="sidebar__foliochat-link">
-            <span className="sidebar__foliochat-label">FOLIOCHAT</span>
-            <span className="sidebar__foliochat-status">● ACTIVE</span>
-          </a>
+        <div className="sidebar__projects">
+          <span className="sidebar__projects-heading">ARTICLES</span>
+          <ul className="sidebar__projects-list">
+            {SOLUTIONS.filter((s) => s.detailUrl).map((s) => (
+              <li key={s.id}>
+                <a href={s.detailUrl} className="sidebar__projects-link">
+                  <span className="sidebar__projects-label">{s.title.toUpperCase()}</span>
+                  {s.id === 'SOL-000' && (
+                    <span className="sidebar__foliochat-status">● ACTIVE</span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="sidebar__cv">

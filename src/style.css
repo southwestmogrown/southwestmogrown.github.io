@@ -148,11 +148,50 @@ img {
   min-width: 1.2rem;
 }
 
-.sidebar__foliochat {
+.sidebar__projects {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
+
+.sidebar__projects-heading {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__projects-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sidebar__projects-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color var(--transition);
+}
+
+.sidebar__projects-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.sidebar__projects-link:hover .sidebar__projects-label {
+  color: var(--text);
+}
+
 
 .sidebar__foliochat-link {
   display: flex;
@@ -793,6 +832,8 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  background: transparent;
+  cursor: pointer;
 }
 
 .solution-card__link:hover {

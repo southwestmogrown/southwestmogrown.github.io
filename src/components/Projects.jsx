@@ -1,14 +1,15 @@
 import { useFadeUp } from '../hooks/useFadeUp'
 
-const SOLUTIONS = [
+export const SOLUTIONS = [
   {
     id: 'SOL-000',
     title: 'FolioChat',
     problem: 'Portfolio sites are static and passive — visitors scroll once and leave without experiencing the depth behind the work.',
     solution: 'AI-powered portfolio chat assistant with live GitHub context. Fetches real repo data, answers questions about projects, skills, and background in real time. Embeddable widget — active on this page.',
     stack: ['TypeScript', 'React', 'Claude API', 'GitHub API'],
-    sourceUrl: null,
+    sourceUrl: 'https://github.com/southwestmogrown/foliochat',
     liveUrl: null,
+    liveAction: () => window.dispatchEvent(new CustomEvent('foliochat:open')),
     detailUrl: '/projects/foliochat',
     imageUrl: '/assets/images/projects/foliochat/foliochat-example.png',
     featured: true,
@@ -100,7 +101,7 @@ export default function Projects() {
   )
 }
 
-function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl, imageUrl, detailUrl, featured }) {
+function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl, liveAction, imageUrl, detailUrl, featured }) {
   return (
     <article className={`solution-card${featured ? ' solution-card--featured' : ''}`}>
       <div className="solution-card__id">{id}</div>
@@ -150,6 +151,14 @@ function SolutionCard({ id, title, problem, solution, stack, sourceUrl, liveUrl,
           >
             <i className="fa-solid fa-arrow-up-right-from-square"></i> LIVE
           </a>
+        )}
+        {!liveUrl && liveAction && (
+          <button
+            onClick={liveAction}
+            className="solution-card__link"
+          >
+            <i className="fa-solid fa-arrow-up-right-from-square"></i> LIVE
+          </button>
         )}
         {detailUrl && (
           <a href={detailUrl} className="solution-card__link solution-card__link--detail">
