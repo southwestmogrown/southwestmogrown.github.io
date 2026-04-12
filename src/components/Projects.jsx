@@ -53,6 +53,16 @@ const SOLUTIONS = [
     imageUrl: '/assets/images/projects/resume-parser/Resume-Parser-Demo-Screen.png',
     liveUrl: 'https://resume-parser-ten-mu.vercel.app/',
   },
+  {
+    id: 'SOL-005',
+    title: 'QuizQuest',
+    problem: 'Traditional training platforms offered no engagement loop — learners dropped off quickly with no incentive to retain knowledge or complete courses.',
+    solution: 'Gamified LMS that turns Markdown files into interactive lessons — reading, quizzes, and in-browser code challenges with a Go execution sandbox. AI Socratic Coach streams hints via SSE without giving answers. XP, streaks, and a rank system drive completion.',
+    stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Go', 'Claude API'],
+    sourceUrl: 'https://github.com/southwestmogrown/quizquest',
+    imageUrl: null,
+    liveUrl: 'https://quizquest-5g96.onrender.com/',
+  },
 ]
 
 export default function Projects() {
