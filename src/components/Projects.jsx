@@ -10,7 +10,7 @@ const SOLUTIONS = [
     sourceUrl: null,
     liveUrl: null,
     detailUrl: '/projects/foliochat',
-    imageUrl: null,
+    imageUrl: '/assets/images/projects/foliochat/foliochat-example.png',
     featured: true,
   },
   {
@@ -40,7 +40,7 @@ const SOLUTIONS = [
     solution: 'Multi-model LLM prompt testing tool. Run any prompt against multiple AI models simultaneously, compare responses side by side, score them, and save runs for later review. Includes a demo mode for unauthenticated visitors.',
     stack: ['Next.js', 'TypeScript', 'Claude API', 'Prisma', 'PostgreSQL'],
     sourceUrl: 'https://github.com/southwestmogrown/prompt-playground',
-    imageUrl: '/assets/images/projects/prism/Prism-Demo.png',
+    imageUrl: '/assets/images/projects/prism/prism-landing.png',
     liveUrl: 'https://prompt-playground-weld.vercel.app/',
   },
   {
@@ -60,7 +60,7 @@ const SOLUTIONS = [
     solution: 'Gamified LMS that turns Markdown files into interactive lessons — reading, quizzes, and in-browser code challenges with a Go execution sandbox. AI Socratic Coach streams hints via SSE without giving answers. XP, streaks, and a rank system drive completion.',
     stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Go', 'Claude API'],
     sourceUrl: 'https://github.com/southwestmogrown/quizquest',
-    imageUrl: null,
+    imageUrl: '/assets/images/projects/quizquest/quizquest-dashboard.png',
     liveUrl: 'https://quizquest-5g96.onrender.com/',
   },
 ]
