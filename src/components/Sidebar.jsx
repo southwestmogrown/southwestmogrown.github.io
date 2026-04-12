@@ -92,6 +92,7 @@ export default function Sidebar() {
         <div className="sidebar__footer">
           <a href="#contact">CONTACT</a>
           <a href="#firmware">PROJECTS</a>
+          <a href="/writing">WRITING</a>
         </div>
       </aside>
     </>
