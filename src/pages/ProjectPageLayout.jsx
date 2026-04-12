@@ -50,7 +50,7 @@ export default function ProjectPageLayout({ title, description, stack, overviewR
               {articles.map(article => (
                 <article key={article.slug} className="project-page__article">
                   <h3 className="project-page__article-title">
-                    {article.slug.replace(/-/g, ' ').toUpperCase()}
+                    {article.slug.replace(/^\d+-/, '').replace(/-/g, ' ').toUpperCase()}
                   </h3>
                   <div className="project-page__prose">
                     <ReactMarkdown>{article.content}</ReactMarkdown>
