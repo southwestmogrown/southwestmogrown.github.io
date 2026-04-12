@@ -53,6 +53,16 @@ const SOLUTIONS = [
     imageUrl: '/assets/images/projects/resume-parser/Resume-Parser-Demo-Screen.png',
     liveUrl: 'https://resume-parser-ten-mu.vercel.app/',
   },
+  {
+    id: 'SOL-005',
+    title: 'QuizQuest',
+    problem: 'Traditional training platforms offered no engagement loop — learners dropped off quickly with no incentive to retain knowledge.',
+    solution: 'Gamified learning management system with quiz-based progression, scoring, and competitive elements. Transforms passive content consumption into active recall — boosting retention and completion rates.',
+    stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
+    sourceUrl: 'https://github.com/southwestmogrown/quizquest',
+    imageUrl: null,
+    liveUrl: 'https://quizquest-5g96.onrender.com/',
+  },
 ]
 
 export default function Projects() {
