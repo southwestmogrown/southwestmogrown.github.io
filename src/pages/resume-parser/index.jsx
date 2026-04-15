@@ -13,13 +13,13 @@ const ARTICLES = Object.entries(articleModules)
   }))
   .sort((a, b) => a.slug.localeCompare(b.slug))
 
-const STACK = ['Next.js', 'TypeScript', 'Claude API', 'Tailwind CSS']
+const STACK = ['Next.js', 'TypeScript', 'Claude API', 'Stripe', 'Supabase', 'Tailwind CSS']
 
 export default function ResumeParserPage() {
   return (
     <ProjectPageLayout
-      title="Resume Parser"
-      description="Parses a PDF resume and scores it against a job description using two sequential Claude API calls. Extracts structured data and outputs ranked summaries — cutting review time by 80%."
+      title="PassStack"
+      description="Multi-phase Claude API pipeline — upload a PDF resume, get tiered gap analysis, bullet rewrites, a streaming cover letter, a study plan, and behavioral STAR interview coaching. Stripe-gated paid phases with Supabase token storage."
       stack={STACK}
       overviewRaw={overviewRaw}
       articles={ARTICLES}
